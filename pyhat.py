@@ -95,8 +95,8 @@ class Pyhat:
         self.crism = self.tr(u'&Crism')
 
         # TODO: We are going to let the user set this up in a future iteration
-        self.toolbar = self.iface.addToolBar(u'Pyhat')
-        self.toolbar.setObjectName(u'Pyhat')
+        # self.toolbar = self.iface.addToolBar(u'Pyhat')
+        # self.toolbar.setObjectName(u'Pyhat')
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -123,7 +123,7 @@ class Pyhat:
         crism = False,
         enabled_flag=True,
         add_to_menu=True,
-        add_to_toolbar=True,
+        add_to_toolbar=False,
         status_tip=None,
         whats_this=None,
         parent=None):
@@ -241,7 +241,7 @@ class Pyhat:
                 action)
             self.iface.removeToolBarIcon(action)
         # remove the toolbar
-        del self.toolbar
+        # del self.toolbar
 
     def build_menus(self, module, menu_name, package=None):
         """
