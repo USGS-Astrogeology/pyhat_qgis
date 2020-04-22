@@ -284,8 +284,10 @@ class Pyhat:
         modified_img = getattr(module, str(func))(img)
 
         # Stores the name of the image file
-        new_filename = (str(func) + '_' + str(layer_path.split('/')[-1].split('.')[0]) + '.tif')
 
+        base = os.path.basename(layer_path)
+        new_filename = (str(func) + '_' + base + '.tif')
+        
         # Creates the new filepath for the image
         new_filepath = os.path.join(str(PyhatDialog.img_outpath), new_filename)
 
