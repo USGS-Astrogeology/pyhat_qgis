@@ -288,7 +288,8 @@ class Pyhat:
 
         # Stores the name of the image file
 
-        base = os.path.basename(layer_path)
+        base_with_ext = os.path.basename(layer_path)
+        base = os.path.splitext(base_with_ext)[0]   # get base without extension
         new_filename = (str(func) + '_' + base + '.tif')
         
         # Creates the new filepath for the image
