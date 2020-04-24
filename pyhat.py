@@ -304,7 +304,7 @@ class Pyhat:
 
         # Grabs the new tiff and adds it into QGIS
         self.iface.addRasterLayer(new_filepath, new_filename)
-
+        
         return 0
 
     def setup_outpath(self):
