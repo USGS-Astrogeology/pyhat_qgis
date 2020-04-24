@@ -69,14 +69,28 @@
 4. Click okay and start going! 
 
 
+
 # Example Use Case
-1. Download this .tif to use as sample data: [M3_4030seg_L2_aristcrater.tif](https://github.com/USGS-Astrogeology/PyHAT/wiki/files/M3_4030seg_L2_aristcrater.tif)
-2. In QGIS, open the sample tif file as a layer
-   ![Input Layer](https://raw.githubusercontent.com/wiki/USGS-Astrogeology/PyHAT/images/input.png)
-   
-3. Select from the PyHAT option at the top:
+
+**1. Download this .tif to use as sample data: [M3_4030seg_L2_aristcrater.tif](https://github.com/USGS-Astrogeology/PyHAT/wiki/files/M3_4030seg_L2_aristcrater.tif)**
+
+&nbsp;&nbsp;
+
+**2. In QGIS, open the sample tif file as a layer**
+
+ ![Input Layer](https://raw.githubusercontent.com/wiki/USGS-Astrogeology/PyHAT/images/input.png)
+
+&nbsp;&nbsp;
+
+**3. Select from the PyHAT option at the top:**
+
    * PyHAT > M3 > Pipe > bd1050
 
-4. A new layer will have been placed in your view
-   ![Output Layer](https://raw.githubusercontent.com/wiki/USGS-Astrogeology/PyHAT/images/output.png)
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+**4. A new layer will have been placed in your view**
+
+  ![Output Layer](https://raw.githubusercontent.com/wiki/USGS-Astrogeology/PyHAT/images/output.png)
+
    * This new layer will be automatically selected in the bottom left layer view. If you wish to run another algorithm, you will need to deselect it and ensure that your original .tif is the only selected layer.
