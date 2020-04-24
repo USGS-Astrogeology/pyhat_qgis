@@ -123,7 +123,7 @@ class Pyhat:
         crism = False,
         enabled_flag=True,
         add_to_menu=True,
-        add_to_toolbar=False,
+        add_to_toolbar=True,
         status_tip=None,
         whats_this=None,
         parent=None):
@@ -233,15 +233,18 @@ class Pyhat:
         # TODO: Build Menus for CRISM algorithms
         self.build_menus(crism_algs, self.crism_menu)
 
+        
+        
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
+
+        self.menu.deleteLater()
+
         for action in self.actions:
-            self.iface.removePluginMenu(
-                self.tr(u'&PyHat'),
-                action)
+            self.iface.removePluginMenu(self.tr(u'&PyHat'), action)
             self.iface.removeToolBarIcon(action)
-        # remove the toolbar
-        # del self.toolbar
+
+            
 
     def build_menus(self, module, menu_name, package=None):
         """
