@@ -95,8 +95,7 @@ class Pyhat:
         self.crism = self.tr(u'&Crism')
 
         # TODO: We are going to let the user set this up in a future iteration
-        # self.toolbar = self.iface.addToolBar(u'Pyhat')
-        # self.toolbar.setObjectName(u'Pyhat')
+        
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
