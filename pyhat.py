@@ -304,6 +304,9 @@ class Pyhat:
 
         # Grabs the new tiff and adds it into QGIS
         self.iface.addRasterLayer(new_filepath, new_filename)
+
+        # Selects original layer to be active instead of new layer
+        self.iface.setActiveLayer(layer)
         
         return 0
 

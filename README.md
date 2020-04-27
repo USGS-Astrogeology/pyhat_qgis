@@ -93,4 +93,3 @@
 
   ![Output Layer](https://raw.githubusercontent.com/wiki/USGS-Astrogeology/PyHAT/images/output.png)
 
-   * This new layer will be automatically selected in the bottom left layer view. If you wish to run another algorithm, you will need to deselect it and ensure that your original .tif is the only selected layer.
