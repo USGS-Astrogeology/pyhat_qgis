@@ -7,7 +7,16 @@
 &nbsp;&nbsp;
 
 
-**2. To install the PyHAT library and dependencies:**
+**2. Create and activate a conda environment:**
+   * `conda create -n qgis_pyhat`
+   * `conda activate qgis_pyhat`
+   *  NOTE: If you want to restart installation, you should remove the `qgis_pyhat` environment and create a new one.
+      * `conda env remove -n qgis_pyhat`
+
+&nbsp;&nbsp;
+
+
+**3. To install the PyHAT library and dependencies:**
    * `conda config --add channels conda-forge`
    * `conda config --add channels usgs-astrogeology`
    * `conda install -c usgs-astrogeology pyhat`
@@ -15,10 +24,9 @@
 &nbsp;&nbsp;
 
 
-**3. To install QGIS:**
+**4. To install QGIS:**
    * On windows: `conda install -c conda-forge qgis`
    * On linux: `conda install -c conda-forge qgis`
-       * NOTE: Linux users need to run one additional command: `conda update qt`
    * On OSX: `conda install -c conda-forge qgis`
 
 
@@ -68,7 +76,7 @@
 3. Enter the FULL path of where you want to store your images i.e. /home/your_username/Desktop/
 4. Click okay and start going! 
 
-
+&nbsp;&nbsp;
 
 # Example Use Case
 
