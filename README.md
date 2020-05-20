@@ -11,6 +11,7 @@
    * `conda create -n qgis_pyhat`
    * `conda activate qgis_pyhat`
    *  NOTE: If you want to restart installation, you should remove the `qgis_pyhat` environment and create a new one.
+      * `conda deactivate`
       * `conda env remove -n qgis_pyhat`
 
 &nbsp;&nbsp;
