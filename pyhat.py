@@ -35,7 +35,7 @@ from functools import partial
 from plio.io.io_gdal import array_to_raster
 from libpyhat.io.io_crism import open as crism_open
 from libpyhat.io.io_moon_mineralogy_mapper import open as m3_open
-from libpyhat.derived.m3 import pipe, supplemental, ip, new
+from libpyhat.derived.m3 import pipe, new
 from libpyhat.derived.crism import crism_algs
 from unittest import mock
 import inspect
@@ -217,16 +217,8 @@ class Pyhat:
         self.m3_pipe_functions = QMenu( "&Pipe", self.m3_menu )
         self.m3_menu.insertMenu( lastAction, self.m3_pipe_functions )
 
-        self.m3_ip_functions = QMenu( "&IP", self.m3_menu )
-        self.m3_menu.insertMenu( lastAction, self.m3_ip_functions )
-
-        self.m3_supplmental_functions = QMenu( "&Supplemental", self.m3_menu )
-        self.m3_menu.insertMenu( lastAction, self.m3_supplmental_functions )
-
         # Adds actions to pipe menu
         self.build_menus(pipe, self.m3_pipe_functions)
-        self.build_menus(supplemental, self.m3_supplmental_functions)
-        self.build_menus(ip, self.m3_ip_functions)
 
         # Adds actions to crism
         # TODO: Build Menus for CRISM algorithms
