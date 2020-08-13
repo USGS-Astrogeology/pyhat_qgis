@@ -95,7 +95,7 @@ class Pyhat:
         self.crism = self.tr(u'&Crism')
 
         # TODO: We are going to let the user set this up in a future iteration
-        
+
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -224,8 +224,8 @@ class Pyhat:
         # TODO: Build Menus for CRISM algorithms
         self.build_menus(crism_algs, self.crism_menu)
 
-        
-        
+
+
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
 
@@ -235,7 +235,7 @@ class Pyhat:
             self.iface.removePluginMenu(self.tr(u'&PyHat'), action)
             self.iface.removeToolBarIcon(action)
 
-            
+
 
     def build_menus(self, module, menu_name, package=None):
         """
@@ -282,9 +282,11 @@ class Pyhat:
         base_with_ext = os.path.basename(layer_path)
         base = os.path.splitext(base_with_ext)[0]   # get base without extension
         new_filename = (str(func) + '_' + base + '.tif')
-        
+
         # Creates the new filepath for the image
         new_filepath = os.path.join(str(PyhatDialog.img_outpath), new_filename)
+
+        gdal.UseExceptions()
 
         try:
             img.spatial_reference
@@ -299,7 +301,7 @@ class Pyhat:
 
         # Selects original layer to be active instead of new layer
         self.iface.setActiveLayer(layer)
-        
+
         return 0
 
     def setup_outpath(self):
