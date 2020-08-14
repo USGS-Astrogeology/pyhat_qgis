@@ -23,7 +23,7 @@
 """
 from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QAction, QMenu, QCheckBox
+from PyQt5.QtWidgets import QAction, QMenu
 from qgis.core import *
 
 import sys
