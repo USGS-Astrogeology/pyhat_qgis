@@ -23,7 +23,7 @@
 """
 from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QAction, QMenu
+from PyQt5.QtWidgets import QAction, QMenu, QCheckBox
 from qgis.core import *
 
 import sys
@@ -209,6 +209,9 @@ class Pyhat:
         self.crism_menu = QMenu( "&CRISM", self.menu )
         self.menu.insertMenu( lastAction, self.crism_menu )
 
+        self.use_projection = QAction("Use Projection", self.menu, checkable=True, checked=True)
+        self.menu.addAction(self.use_projection)
+
         self.action = QAction(QIcon(self.icon_path),"Setup Outpath", self.iface.mainWindow())
         self.action.triggered.connect(self.setup_outpath)
         self.menu.addAction( self.action )
@@ -289,6 +292,10 @@ class Pyhat:
         gdal.UseExceptions()
 
         try:
+            # Instead of having if/else block with "else" and "except" sharing logic,
+            #  just force the "else" into the exception block.
+            if not self.use_projection.isChecked():
+                raise
             img.spatial_reference
             array_to_raster(modified_img, new_filepath, bittype='GDT_Float32',
                                        projection=img.spatial_reference)
