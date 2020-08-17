@@ -209,7 +209,7 @@ class Pyhat:
         self.crism_menu = QMenu( "&CRISM", self.menu )
         self.menu.insertMenu( lastAction, self.crism_menu )
 
-        self.use_projection = QAction("Use Projection", self.menu, checkable=True, checked=True)
+        self.use_projection = QAction("Use Projection", self.menu, checkable=True, checked=False)
         self.menu.addAction(self.use_projection)
 
         self.action = QAction(QIcon(self.icon_path),"Setup Outpath", self.iface.mainWindow())
@@ -291,16 +291,15 @@ class Pyhat:
 
         gdal.UseExceptions()
 
-        try:
-            # Instead of having if/else block with "else" and "except" sharing logic,
-            #  just force the "else" into the exception block.
-            if not self.use_projection.isChecked():
-                raise
-            img.spatial_reference
-            array_to_raster(modified_img, new_filepath, bittype='GDT_Float32',
-                                       projection=img.spatial_reference)
-        except:
-            # Writes the tiff to the user specified location
+
+        if self.use_projection.isChecked():
+            try:
+                img.spatial_reference
+                array_to_raster(modified_img, new_filepath, bittype='GDT_Float32',
+                                        projection=img.spatial_reference)
+            except:
+                array_to_raster(modified_img, new_filepath, bittype='GDT_Float32')
+        else:
             array_to_raster(modified_img, new_filepath, bittype='GDT_Float32')
 
         # Grabs the new tiff and adds it into QGIS
